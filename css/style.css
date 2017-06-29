@@ -381,7 +381,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: 'Droid Serif', serif;
+  font-family: 'Droid Serif', 'Microsoft YaHei', serif;
   font-size: 1em;
   background: #f7f7f7;
   margin: 20px 0;
@@ -804,7 +804,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', 'Microsoft YaHei', monospace;
 }
 .article-entry code {
   background: #fff;
@@ -867,7 +867,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', 'Microsoft YaHei', monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
