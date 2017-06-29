@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/29/Java常用API总结/index.html">
 <meta property="og:site_name" content="Hi, Leo">
 <meta property="og:description" content="本文总结了java语言中关于String, Array, Collection以及IO的一些常用API和它们的例子.  StringString是java常用的对象, 它的常用API如下&amp;gt; char charAt(int index)  获取指定index处的一个字符.  int codePointAt(int index)  获取指定index处的一个字符的Unicode值.  int c">
-<meta property="og:updated_time" content="2017-06-29T08:42:55.584Z">
+<meta property="og:updated_time" content="2017-06-29T09:33:16.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA常用API总结">
 <meta name="twitter:description" content="本文总结了java语言中关于String, Array, Collection以及IO的一些常用API和它们的例子.  StringString是java常用的对象, 它的常用API如下&amp;gt; char charAt(int index)  获取指定index处的一个字符.  int codePointAt(int index)  获取指定index处的一个字符的Unicode值.  int c">
@@ -195,7 +195,7 @@
 <blockquote>
 <p>返回给定参数的String形式.</p>
 </blockquote>
-<h3 id="Pattern-和-Matcher"><a href="#Pattern-和-Matcher" class="headerlink" title="Pattern 和 Matcher"></a>Pattern 和 Matcher</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String strToMatch = &quot;aabbccaaaddd&quot;;</div><div class="line">String regex = &quot;aaa&quot;;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(strToMatch);</div><div class="line">if (m.matches()) &#123;</div><div class="line">	String result = m.group(0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Pattern-和-Matcher"><a href="#Pattern-和-Matcher" class="headerlink" title="Pattern 和 Matcher"></a>Pattern 和 Matcher</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String strToMatch = <span class="string">"aabbccaaaddd"</span>;</div><div class="line">String regex = <span class="string">"aaa"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(strToMatch);</div><div class="line"><span class="keyword">if</span> (m.matches()) &#123;</div><div class="line">	String result = m.group(<span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="Pattern-常用API"><a href="#Pattern-常用API" class="headerlink" title="Pattern 常用API"></a>Pattern 常用API</h4><p><code>static Pattern compile(String regex)</code><br><code>static Pattern compile(String regex, int flags)</code></p>
 <blockquote>
 <p>获得由指定正则表达式生成的pattern对象.</p>
@@ -530,10 +530,39 @@
 <blockquote>
 <p><code>inclusive</code>为<code>true</code> 时，获得大于等于指定元素的一个子set，否则同上。</p>
 </blockquote>
-<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>|           |    抛出异常        |    返回值    |</p>
-<blockquote>
-<p>———–&gt;|&gt;————&gt;|&gt;———-&gt;<br>|    插入        |    add(e)        |    offer(e)|<br>|    删除        |    remove()    |    poll()    |<br>|    测试        |    element()    |    peek()    |</p>
-</blockquote>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">抛出异常</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">插入</td>
+<td style="text-align:center">add(e)</td>
+<td>offer(e)</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">删除</td>
+<td style="text-align:center">remove()</td>
+<td>poll()</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">测试</td>
+<td style="text-align:center">element()</td>
+<td>peek()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><code>boolean add(E e)</code></p>
 <blockquote>
 <p>向队列尾部添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
@@ -559,7 +588,40 @@
 <p>从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
 </blockquote>
 <h3 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h3><p>Deque 是双向队列，缩写自Double Ended Queue。它的常见实现包括ArrayDeque 和 LinkedList。</p>
-<p>|        —    |        抛出异常        |    返回值        |        抛出异常    |    返回值        |<br>|&gt;———-|&gt;——————|&gt;————–|&gt;————–|&gt;————–|<br>|    插入        |    addFirst(e)        |offerFirst(e)    |addLast(e)        |offerLast(e)    |<br>|    删除        |    removeFirst()    |pollFirst()    |removeLast()    |pollLast()        |<br>|    测试        |    getFirst()        |peekFirst()    |getLast()        |peekLast()        |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">抛出异常</th>
+<th style="text-align:left">返回值</th>
+<th style="text-align:left">抛出异常</th>
+<th style="text-align:left">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">插入</td>
+<td style="text-align:left">addFirst(e)</td>
+<td style="text-align:left">offerFirst(e)</td>
+<td style="text-align:left">addLast(e)</td>
+<td style="text-align:left">offerLast(e)</td>
+</tr>
+<tr>
+<td style="text-align:left">删除</td>
+<td style="text-align:left">removeFirst()</td>
+<td style="text-align:left">pollFirst()</td>
+<td style="text-align:left">removeLast()</td>
+<td style="text-align:left">pollLast()</td>
+</tr>
+<tr>
+<td style="text-align:left">测试</td>
+<td style="text-align:left">getFirst()</td>
+<td style="text-align:left">peekFirst()</td>
+<td style="text-align:left">getLast()</td>
+<td style="text-align:left">peekLast()</td>
+</tr>
+</tbody>
+</table>
 <p><code>boolean add(E e)</code></p>
 <blockquote>
 <p>向队列尾添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
