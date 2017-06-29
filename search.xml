@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
-      <url>/2017/06/26/Java%E5%B8%B8%E7%94%A8API%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<h1 id="JAVA常用API总结"><a href="#JAVA常用API总结" class="headerlink" title="JAVA常用API总结"></a>JAVA常用API总结</h1><p>本文总结了java语言中关于<strong>String</strong>, <strong>Array</strong>, <strong>Collection</strong>以及<strong>IO</strong>的一些常用API和它们的例子.</p>
+      <title><![CDATA[JAVA常用API总结]]></title>
+      <url>/2017/06/29/Java%E5%B8%B8%E7%94%A8API%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>本文总结了java语言中关于<strong>String</strong>, <strong>Array</strong>, <strong>Collection</strong>以及<strong>IO</strong>的一些常用API和它们的例子.</p>
 <hr>
 <h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String是java常用的对象, 它的常用API如下&gt;</p>
 <p><code>char charAt(int index)</code></p>
@@ -778,6 +778,12 @@
 </blockquote>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
         
     </entry>
     
