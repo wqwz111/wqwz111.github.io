@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-26T08:54:52.238Z</updated>
+  <updated>2017-06-29T08:02:42.752Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/06/26/Java%E5%B8%B8%E7%94%A8API%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/06/26/Java常用API总结/</id>
     <published>2017-06-26T08:54:51.649Z</published>
-    <updated>2017-06-26T08:54:52.238Z</updated>
+    <updated>2017-06-29T08:02:42.752Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JAVA常用API总结"><a href="#JAVA常用API总结" class="headerlink" title="JAVA常用API总结"></a>JAVA常用API总结</h1><p>本文总结了java语言中关于<strong>String</strong>, <strong>Array</strong>, <strong>Collection</strong>以及<strong>IO</strong>的一些常用API和它们的例子.</p>
 <hr>
@@ -95,7 +95,7 @@
 <p><code>static String toString(T[] a)</code><br>: 将数组转换为字符串对象，转换之后形如<code>[x,y,z]</code></p>
 <hr>
 <h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>常用的List包括<code>ArrayList</code> 、<code>LinkedList</code> 和<code>Stack</code>。</p>
-<h4 id="ArrayLIst"><a href="#ArrayLIst" class="headerlink" title="ArrayLIst"></a>ArrayLIst</h4><p><code>boolean add(E e)</code><br>: 向ArrayList尾部添加一个元素。</p>
+<h4 id="ArrayLIst-常用API"><a href="#ArrayLIst-常用API" class="headerlink" title="ArrayLIst 常用API"></a>ArrayLIst 常用API</h4><p><code>boolean add(E e)</code><br>: 向ArrayList尾部添加一个元素。</p>
 <p><code>void add(int index, E e)</code><br>: 向ArrayList的指定index处添加一个元素。</p>
 <p><code>boolean addAll(Collection&lt;? extends E&gt; c)</code><br>: 向ArrayList尾部添加所有<code>c</code> 中的元素。</p>
 <p><code>boolean addAll(int index, Collection&lt;? extends E&gt; c)</code><br>: 向ArrayList的指定index处添加所有<code>c</code> 中的元素。</p>
@@ -117,15 +117,15 @@
 <p><code>Object[] toArray()</code><br>: 将ArrayList转换成数组。</p>
 <p><code>&lt;T&gt; T[] toArray(T[] a)</code><br>: 将ArrayList转换成数组。<code>a</code> 不需要指定大小。</p>
 <p><code>void trimToSize()</code><br>: 将ArrayList的容量缩减至适应当前元素个数。</p>
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList是List的一种双链表实现。同时它也是Deque的一种实现。这里仅列出与ArrayList和 Deque不同的API。</p>
+<h4 id="LinkedList-常用API"><a href="#LinkedList-常用API" class="headerlink" title="LinkedList 常用API"></a>LinkedList 常用API</h4><p>LinkedList是List的一种双链表实现。同时它也是Deque的一种实现。这里仅列出与ArrayList和 Deque不同的API。</p>
 <p><code>set(int index, E element)</code><br>: 将元素添加到List的指定位置处。</p>
-<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><p><code>boolean empty()</code><br>: 判断堆栈是否为空</p>
+<h4 id="Stack-常用API"><a href="#Stack-常用API" class="headerlink" title="Stack 常用API"></a>Stack 常用API</h4><p><code>boolean empty()</code><br>: 判断堆栈是否为空</p>
 <p><code>E peek()</code><br>: 从栈顶取一个元素，但是不删除它。</p>
 <p><code>E pop()</code><br>: 从栈顶取出一个元素，并删除它。</p>
 <p><code>E push(E item)</code><br>: 将一个元素压入栈顶。</p>
 <p><code>int search(Object o)</code><br>: 查找一个元素，返回它与栈顶的距离，栈顶元素为1。 如果没有找到，则返回-1。</p>
 <h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>常用的Set有两种，分别为HashSet和TreeSet。</p>
-<h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p><code>boolean add(E e)</code><br>: 如果指定元素不存在，便将其添加到set中。</p>
+<h4 id="HashSet-常用API"><a href="#HashSet-常用API" class="headerlink" title="HashSet 常用API"></a>HashSet 常用API</h4><p><code>boolean add(E e)</code><br>: 如果指定元素不存在，便将其添加到set中。</p>
 <p><code>void clear()</code><br>: 清空set中所有元素。</p>
 <p><code>Object clone()</code><br>: 对set进行浅克隆。只克隆set对象，不克隆其中的元素。</p>
 <p><code>boolean contains(Object o)</code><br>: 判断set中是否包含指定对象。</p>
@@ -133,7 +133,7 @@
 <p><code>Iterator&lt;E&gt; iterator()</code><br>: 获得一个迭代器。</p>
 <p><code>boolean remove(Object o)</code><br>: 从set中删除指定元素。</p>
 <p><code>int size()</code><br>: 获得set的元素个数。</p>
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>TreeSet是排序了的set。可以在其构造器中制定一个<code>Comparator</code>对象，用来排序。<br>此处仅列出与HashSet不同的API。</p>
+<h4 id="TreeSet-常用API"><a href="#TreeSet-常用API" class="headerlink" title="TreeSet 常用API"></a>TreeSet 常用API</h4><p>TreeSet是排序了的set。可以在其构造器中制定一个<code>Comparator</code>对象，用来排序。<br>此处仅列出与HashSet不同的API。</p>
 <p><code>E ceiling(E e)</code><br>: 获得大于等于指定元素的最小一个元素，无则返回<code>null</code>。</p>
 <p><code>Iterator&lt;E&gt; descendingIterator()</code><br>: 获得一个逆序的迭代器。</p>
 <p><code>NavigableSet&lt;E&gt; descendingSet()</code><br>: 获得获得一个逆序的set。</p>
@@ -252,7 +252,47 @@
 <p><code>boolean removeLastOccurrence(Object o)</code><br>: 从队列中查找指定的对象，并在最后一次出现的地方删除它。成功时，返回<code>true</code>。</p>
 <p><code>int size()</code><br>: 获得队列中元素的个数。</p>
 <hr>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2>]]></content>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>常用的两中Map的实现类分别是HashMap和TreeMap。</p>
+<h4 id="HashMap-常用API"><a href="#HashMap-常用API" class="headerlink" title="HashMap 常用API"></a>HashMap 常用API</h4><p><code>void clear()</code><br>: 清空所有内容。</p>
+<p><code>Object clone()</code><br>: 对map进行浅复制。</p>
+<p><code>boolean contains(Object key)</code><br>: 判断该map是否包含指定的key。</p>
+<p><code>boolean containsValue(Object value)</code><br>: 判断该map是否包含指定的value。</p>
+<p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code><br>: 获得一个关于所有在此map中的内容的一个set。</p>
+<p><code>V get(Object key)</code><br>: 获取指定key所关联的value对象。</p>
+<p><code>V getOrDefault(Object key, V defaultValue)</code><br>: 同上，如果不存在，则返回默认值。</p>
+<p><code>isEmpty()</code><br>: 判断当前map是否为空。</p>
+<p><code>Set&lt;K&gt; keySet()</code><br>: 获得包含此map中所有key的一个set。</p>
+<p><code>V put(K key, V value)</code><br>: 将一个value对象与key关联并存入此map。</p>
+<p><code>void putAll(Map&lt;? extends K, ? extends V&gt; m)</code><br>: 将指定map复制到此map中。</p>
+<p><code>V putIfAbsent(K key, V value)</code><br>: 如果指定的key没有关联任何对象，或者关联到<code>null</code>，则将一个value对象与此key关联并存入此map。</p>
+<p><code>V remove(Object key)</code><br>: 从该map中移除一个与指定key关联的对象。</p>
+<p><code>boolean remove(Object key, Object value)</code><br>: 如果指定的key与value是关联的，便从该map中移除。</p>
+<p><code>V replace(K key, V value)</code><br>: 如果指定的key关联了某个对象或者<code>null</code>，则用value替换之。</p>
+<p><code>boolean replace(K key, V oldValue, V newValue)</code><br>: 如果指定的key与value是关联的，则用newValue替换oldValue。</p>
+<p><code>int size()</code><br>: 获得该map已关联的key-value个数。</p>
+<p><code>Collection&lt;V&gt; values()</code><br>: 获得该map中所有的value对象。</p>
+<h4 id="TreeMap-常用API"><a href="#TreeMap-常用API" class="headerlink" title="TreeMap 常用API"></a>TreeMap 常用API</h4><p>TreeMap是基于红黑树实现的。所有元素默认按照升序排列，或者通过在构造器中指定一个Comparator来排序。此处仅列出与HashMap不同的API。</p>
+<p><code>Map.Entry&lt;K,V&gt; ceilingEntry(K key)</code><br>: 获得所有key大于等于指定的key的key-value。</p>
+<p><code>K ceilingKey(K key)</code><br>: 获得大于等于指定key的最小一个。</p>
+<p><code>NavigableSet&lt;K&gt; descendingKeySet()</code><br>: 获得一个逆序的key的set。</p>
+<p><code>NavigableMap&lt;K,V&gt; descendingMap()</code><br>: 获得一个逆序的map。</p>
+<p><code>Map.Entry&lt;K,V&gt; firstEntry()</code><br>: 获得该map的最小key的key-value。</p>
+<p><code>K firstKey()</code><br>: 获得该map的最小的key。</p>
+<p><code>Map.Entry&lt;K,V&gt; floorEntry(K key)</code><br>: 获得所有key小于等于指定的key的key-value。</p>
+<p><code>K floorKey(K key)</code><br>: 获得小于等于该key的最大一个。</p>
+<p><code>SortedMap&lt;K,V&gt; headMap(K toKey)</code><br>: 获得所有key小于指定tokey的key-value。</p>
+<p><code>NavigableMap&lt;K,V&gt; headMap(K toKey, boolean inclusive)</code><br>: 同上，如果inclusive为true，则包括等于toKey的key-value。</p>
+<p><code>Map.Entry&lt;K,V&gt; higherEntry(K key)</code><br>: 获得所有大于指定key的key-value。</p>
+<p><code>K higherKey(K key)</code><br>: 获得大于指定key的最小一个。</p>
+<p><code>Map.Entry&lt;K,V&gt; lastEntry()</code><br>: 获得该map的最大key的key-value。</p>
+<p><code>K lastKey()</code><br>: 获得该map的最大的key。</p>
+<p><code>Map.Entry&lt;K,V&gt; lowerEntry(K key)</code><br>: 获得所有小于指定key的key-value。</p>
+<p><code>K lowerKey(K key)</code><br>: 获得小于指定key的最大一个。</p>
+<p><code>NavigableMap&lt;K,V&gt; subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive)</code><br>: 获得从fromKey到toKey的所有key-value。fromInclusive和toInclusive控制区间开闭。</p>
+<p><code>SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey)</code><br>: 获得从fromKey到toKey的所有key-value，左闭右开。</p>
+<p><code>SortedMap&lt;K,V&gt; tailMap(K fromKey)</code><br>: 获得所有key小于指定tokey的key-value。</p>
+<p><code>SortedMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive)</code><br>: 同上，如果inclusive为true，则包括等于fromKey的key-value。</p>
+]]></content>
     
     <summary type="html">
     
