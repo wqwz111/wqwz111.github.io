@@ -1,389 +1,822 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Hi, Leo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA常用API总结本文总结了java语言中关于String, Array, Collection以及IO的一些常用API和它们的例子.  [TOC] StringString是java常用的对象, 它的常用API如下: char charAt(int index): 获取指定index处的一个字符. int codePointAt(int index): 获取指定index处的一个字符的Uni">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hi, Leo">
-<meta property="og:url" content="http://yoursite.com/2017/06/26/Java常用API总结/index.html">
-<meta property="og:site_name" content="Hi, Leo">
-<meta property="og:description" content="JAVA常用API总结本文总结了java语言中关于String, Array, Collection以及IO的一些常用API和它们的例子.  [TOC] StringString是java常用的对象, 它的常用API如下: char charAt(int index): 获取指定index处的一个字符. int codePointAt(int index): 获取指定index处的一个字符的Uni">
-<meta property="og:updated_time" content="2017-06-29T08:02:42.752Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hi, Leo">
-<meta name="twitter:description" content="JAVA常用API总结本文总结了java语言中关于String, Array, Collection以及IO的一些常用API和它们的例子.  [TOC] StringString是java常用的对象, 它的常用API如下: char charAt(int index): 获取指定index处的一个字符. int codePointAt(int index): 获取指定index处的一个字符的Uni">
-  
-    <link rel="alternative" href="/atom.xml" title="Hi, Leo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  
+<h1 id="java常用api总结">JAVA常用API总结</h1>
 
-</head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <section id="main"><article id="post-Java常用API总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-    <div class="article-meta">
-      <a href="/2017/06/26/Java常用API总结/" class="article-date">
-  <time datetime="2017-06-26T08:54:51.649Z" itemprop="datePublished">2017-06-26</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JAVA常用API总结"><a href="#JAVA常用API总结" class="headerlink" title="JAVA常用API总结"></a>JAVA常用API总结</h1><p>本文总结了java语言中关于<strong>String</strong>, <strong>Array</strong>, <strong>Collection</strong>以及<strong>IO</strong>的一些常用API和它们的例子.</p>
+<p>本文总结了java语言中关于<strong>String</strong>, <strong>Array</strong>, <strong>Collection</strong>以及<strong>IO</strong>的一些常用API和它们的例子.</p>
+
 <hr>
-<p>[TOC]</p>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String是java常用的对象, 它的常用API如下:</p>
-<p><code>char charAt(int index)</code><br>: 获取指定index处的一个字符.</p>
-<p><code>int codePointAt(int index)</code><br>: 获取指定index处的一个字符的Unicode值.</p>
-<p><code>int codePointBefore(int index)</code><br>: 获取指定index前一个字符的Unicode值.</p>
-<p><code>int compareTo(String anotherString)</code><br>: 和另外一个String对象进行比较,比较每个字符的unicode值大小.如果当前的String大,返回正数;如果当前的小,则返回负数;两者相同则返回0.</p>
-<p><code>int compareToIgnoreCase(String str)</code><br>: 同上,只是忽略大小写.</p>
-<p><code>String concat(String str)</code><br>: 将指定String对象拼接到当前String的结尾.</p>
-<p><code>boolean contains(CharSequence s)</code><br>: 判断当前String是否包含指定的字符串.</p>
-<p><code>boolean contentEquals(CharSequence s)</code><br><code>boolean contentEquals(StringBuffer sb)</code><br>: 判断当前String是否和指定的字符串内容相同.</p>
-<p><code>boolean endsWith(String suffix)</code><br>: 判断当前String是否以给定的后缀结尾.</p>
-<p><code>boolean equals(Object anObject)</code><br>: 判断当前String是否和给定的对象相等. 如果给定的对象是String, 则判断它们的内容是否相同.</p>
-<p><code>boolean equalsIgnoreCase(String s)</code><br>: 同上, 只是忽略大小写.</p>
-<p><code>static String format(Locale l, String format, Object... args)</code><br>: 以指定的区域, 格式化的String和其参数构成一个String并返回.</p>
-<p><code>static String format(String format, Object... args)</code><br>: 同上.</p>
-<p><code>byte[] getBytes()</code><br><code>byte[] getBytes(String charsetName)</code><br>: 把当前String对象编码成byte数组形式.</p>
-<p><code>int indexOf(int ch)</code><br><code>int indexOf(int ch, int fromIndex</code><br><code>int indexOf(String str)</code><br><code>int indexOf(String str, int fromIndex</code><br>: 返回指定字符或者字符串第一次出现的位置.</p>
-<p><code>boolean isEmpty()</code><br>: 判断当前String对象的长度是否为0.</p>
-<p><code>static String join(CharSequence delimiter, CharSequence... elements)</code><br>: 将给定的几个字符串按指定的分隔符拼接成一个字符串.</p>
-<p><code>int lastIndexOf(int ch)</code><br><code>int lastIndexOf(int ch, int fromIndex)</code><br><code>int lastIndexOf(String str)</code><br><code>int lastIndexOf(String str, int fromIndex)</code><br>: 返回指定字符或者字符串最后一次出现的位置.</p>
-<p><code>int length()</code><br>: 返回当前String的长度.</p>
-<p><code>boolean matches(String regex)</code><br>: 判断当前String是否符合给定的正则表达式.</p>
-<p><code>String replace(char oldChar, char newChar)</code><br>: 将当前String内的所有oldChar替换成newChar.</p>
-<p><code>String replace(CharSequence target, CharSequence replacement)</code><br>: 将当前String内所有target替换成replacement.</p>
-<p><code>String replaceAll(String regex, String replacement)</code><br>: 将当前String内符合给定正则表达式的部分替换成replacement.</p>
-<p><code>String replaceFirst(String regex, String replacement)</code><br>: 将当前String内符个给定正则表达式的第一个部分替换成replacement.</p>
-<p><code>String[] split(String regex)</code><br>: 将当前String按照给定的正则表达式分隔符拆分成一个String数组.</p>
-<p><code>String[] split(String regex, int limit)</code><br>: 同上, limit限定了拆分的元素个数.</p>
-<p><code>boolean startsWith(String prefix)</code><br>: 判断当前String是否包含指定的前缀.</p>
-<p><code>boolean startWith(String prefix, int toffset)</code><br>: 判断以指定偏移起始的子字符串是否包含指定的前缀.</p>
-<p><code>CharSequence subSequence(int beginIndex, int endIndex)</code><br>: 获取子字符串序列.</p>
-<p><code>String subString(int beginIndex)</code><br><code>String subString(int beginIndex, int endIndex)</code><br>: 获取子字符串.</p>
-<p><code>char[] toCharArray()</code><br>: 将当前String转换成字符数组,</p>
-<p><code>Sting toLowerCase()</code><br><code>String toLowerCase(Locale locale)</code><br>: 将当前String中每个字符转换成小写</p>
-<p><code>String toUpperCase()</code><br><code>String toUpperCase(Locale locale)</code><br>: 将当前String中的每个字符转换成大写.</p>
-<p><code>String trim()</code><br>: 去除当前String两端的空格.</p>
-<p><code>static String valueOf(boolean b)</code><br><code>static String valueOf(char c)</code><br><code>static String valueOf(char[] data)</code><br><code>static String valueOf(char[] data, int offset, int count)</code><br><code>static String valueOf(double d)</code><br><code>static String valueOf(float f)</code><br><code>static String valueOf(int i)</code><br><code>static String valueOf(long l)</code><br><code>static String valueOf(Object obj)</code><br>: 返回给定参数的String形式.</p>
-<h3 id="Pattern-和-Matcher"><a href="#Pattern-和-Matcher" class="headerlink" title="Pattern 和 Matcher"></a>Pattern 和 Matcher</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String strToMatch = &quot;aabbccaaaddd&quot;;</div><div class="line">String regex = &quot;aaa&quot;;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(strToMatch);</div><div class="line">if (m.matches()) &#123;</div><div class="line">	String result = m.group(0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="Pattern-常用API"><a href="#Pattern-常用API" class="headerlink" title="Pattern 常用API"></a>Pattern 常用API</h4><p><code>static Pattern compile(String regex)</code><br><code>static Pattern compile(String regex, int flags)</code><br>: 获得由指定正则表达式生成的pattern对象.</p>
-<p><code>Matcher matcher(CharSequence input)</code><br>: 获得一个包含input的Matcher对象.</p>
-<p><code>static matches(String regex, CharSequence input)</code><br>: 判断input是否包含匹配给定正则表达式的内容.</p>
-<h4 id="Matcher-常用API"><a href="#Matcher-常用API" class="headerlink" title="Matcher 常用API"></a>Matcher 常用API</h4><p><code>int end()</code><br>: 获得最后一次匹配的位置</p>
-<p><code>boolean find()</code><br><code>boolean find(int start)</code><br>: 进行下一次匹配并判断是否存在.</p>
-<p><code>String group()</code><br>: 获得前一次匹配到的内容.</p>
-<p><code>String group(int group)</code><br>: 获取前一次匹配时得到的指定group的内容.</p>
-<p><code>int groupCount()</code><br>: 获得匹配到的组数.</p>
-<p><code>boolean hitEnd()</code><br>: 判断最后一次匹配是否到达字符串结尾.</p>
-<p><code>boolean matches()</code><br>: 进行匹配并判断是否成功.</p>
-<p><code>int start()</code><br>: 获得前一次匹配的起始偏移量.</p>
+
+<p><div class="toc">
+<ul>
+<li><a href="#java常用api总结">JAVA常用API总结</a><ul>
+<li><a href="#string">String</a><ul>
+<li><a href="#pattern-和-matcher">Pattern 和 Matcher</a><ul>
+<li><a href="#pattern-常用api">Pattern 常用API</a></li>
+<li><a href="#matcher-常用api">Matcher 常用API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#array">Array</a></li>
+<li><a href="#collection">Collection</a><ul>
+<li><a href="#list">List</a><ul>
+<li><a href="#arraylist-常用api">ArrayLIst 常用API</a></li>
+<li><a href="#linkedlist-常用api">LinkedList 常用API</a></li>
+<li><a href="#stack-常用api">Stack 常用API</a></li>
+</ul>
+</li>
+<li><a href="#set">Set</a><ul>
+<li><a href="#hashset-常用api">HashSet 常用API</a></li>
+<li><a href="#treeset-常用api">TreeSet 常用API</a></li>
+</ul>
+</li>
+<li><a href="#queue">Queue</a></li>
+<li><a href="#deque">Deque</a></li>
+</ul>
+</li>
+<li><a href="#map">Map</a><ul>
+<li><ul>
+<li><a href="#hashmap-常用api">HashMap 常用API</a></li>
+<li><a href="#treemap-常用api">TreeMap 常用API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="string">String</h2>
+
+<p>String是java常用的对象, 它的常用API如下:</p>
+
+<dl>
+<dt><code>char charAt(int index)</code></dt>
+<dd>获取指定index处的一个字符.</dd>
+
+<dt><code>int codePointAt(int index)</code></dt>
+<dd>获取指定index处的一个字符的Unicode值.</dd>
+
+<dt><code>int codePointBefore(int index)</code></dt>
+<dd>获取指定index前一个字符的Unicode值.</dd>
+
+<dt><code>int compareTo(String anotherString)</code></dt>
+<dd>和另外一个String对象进行比较,比较每个字符的unicode值大小.如果当前的String大,返回正数;如果当前的小,则返回负数;两者相同则返回0.</dd>
+
+<dt><code>int compareToIgnoreCase(String str)</code></dt>
+<dd>同上,只是忽略大小写.</dd>
+
+<dt><code>String concat(String str)</code></dt>
+<dd>将指定String对象拼接到当前String的结尾.</dd>
+
+<dt><code>boolean contains(CharSequence s)</code></dt>
+<dd>判断当前String是否包含指定的字符串.</dd>
+
+<dt><code>boolean contentEquals(CharSequence s)</code></dt>
+<dt><code>boolean contentEquals(StringBuffer sb)</code></dt>
+<dd>判断当前String是否和指定的字符串内容相同.</dd>
+
+<dt><code>boolean endsWith(String suffix)</code></dt>
+<dd>判断当前String是否以给定的后缀结尾.</dd>
+
+<dt><code>boolean equals(Object anObject)</code></dt>
+<dd>判断当前String是否和给定的对象相等. 如果给定的对象是String, 则判断它们的内容是否相同.</dd>
+
+<dt><code>boolean equalsIgnoreCase(String s)</code></dt>
+<dd>同上, 只是忽略大小写.</dd>
+
+<dt><code>static String format(Locale l, String format, Object... args)</code></dt>
+<dd>以指定的区域, 格式化的String和其参数构成一个String并返回.</dd>
+
+<dt><code>static String format(String format, Object... args)</code></dt>
+<dd>同上.</dd>
+
+<dt><code>byte[] getBytes()</code></dt>
+<dt><code>byte[] getBytes(String charsetName)</code></dt>
+<dd>把当前String对象编码成byte数组形式.</dd>
+
+<dt><code>int indexOf(int ch)</code></dt>
+<dt><code>int indexOf(int ch, int fromIndex</code></dt>
+<dt><code>int indexOf(String str)</code></dt>
+<dt><code>int indexOf(String str, int fromIndex</code></dt>
+<dd>返回指定字符或者字符串第一次出现的位置.</dd>
+
+<dt><code>boolean isEmpty()</code></dt>
+<dd>判断当前String对象的长度是否为0.</dd>
+
+<dt><code>static String join(CharSequence delimiter, CharSequence... elements)</code></dt>
+<dd>将给定的几个字符串按指定的分隔符拼接成一个字符串.</dd>
+
+<dt><code>int lastIndexOf(int ch)</code></dt>
+<dt><code>int lastIndexOf(int ch, int fromIndex)</code></dt>
+<dt><code>int lastIndexOf(String str)</code></dt>
+<dt><code>int lastIndexOf(String str, int fromIndex)</code></dt>
+<dd>返回指定字符或者字符串最后一次出现的位置.</dd>
+
+<dt><code>int length()</code></dt>
+<dd>返回当前String的长度.</dd>
+
+<dt><code>boolean matches(String regex)</code></dt>
+<dd>判断当前String是否符合给定的正则表达式.</dd>
+
+<dt><code>String replace(char oldChar, char newChar)</code></dt>
+<dd>将当前String内的所有oldChar替换成newChar.</dd>
+
+<dt><code>String replace(CharSequence target, CharSequence replacement)</code></dt>
+<dd>将当前String内所有target替换成replacement.</dd>
+
+<dt><code>String replaceAll(String regex, String replacement)</code></dt>
+<dd>将当前String内符合给定正则表达式的部分替换成replacement.</dd>
+
+<dt><code>String replaceFirst(String regex, String replacement)</code></dt>
+<dd>将当前String内符个给定正则表达式的第一个部分替换成replacement.</dd>
+
+<dt><code>String[] split(String regex)</code></dt>
+<dd>将当前String按照给定的正则表达式分隔符拆分成一个String数组.</dd>
+
+<dt><code>String[] split(String regex, int limit)</code></dt>
+<dd>同上, limit限定了拆分的元素个数.</dd>
+
+<dt><code>boolean startsWith(String prefix)</code></dt>
+<dd>判断当前String是否包含指定的前缀.</dd>
+
+<dt><code>boolean startWith(String prefix, int toffset)</code></dt>
+<dd>判断以指定偏移起始的子字符串是否包含指定的前缀.</dd>
+
+<dt><code>CharSequence subSequence(int beginIndex, int endIndex)</code></dt>
+<dd>获取子字符串序列.</dd>
+
+<dt><code>String subString(int beginIndex)</code></dt>
+<dt><code>String subString(int beginIndex, int endIndex)</code></dt>
+<dd>获取子字符串.</dd>
+
+<dt><code>char[] toCharArray()</code></dt>
+<dd>将当前String转换成字符数组,</dd>
+
+<dt><code>Sting toLowerCase()</code></dt>
+<dt><code>String toLowerCase(Locale locale)</code></dt>
+<dd>将当前String中每个字符转换成小写</dd>
+
+<dt><code>String toUpperCase()</code></dt>
+<dt><code>String toUpperCase(Locale locale)</code></dt>
+<dd>将当前String中的每个字符转换成大写.</dd>
+
+<dt><code>String trim()</code></dt>
+<dd>去除当前String两端的空格.</dd>
+
+<dt><code>static String valueOf(boolean b)</code></dt>
+<dt><code>static String valueOf(char c)</code></dt>
+<dt><code>static String valueOf(char[] data)</code></dt>
+<dt><code>static String valueOf(char[] data, int offset, int count)</code></dt>
+<dt><code>static String valueOf(double d)</code></dt>
+<dt><code>static String valueOf(float f)</code></dt>
+<dt><code>static String valueOf(int i)</code></dt>
+<dt><code>static String valueOf(long l)</code></dt>
+<dt><code>static String valueOf(Object obj)</code></dt>
+<dd>返回给定参数的String形式.</dd>
+</dl>
+
+
+
+<h3 id="pattern-和-matcher">Pattern 和 Matcher</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs mathematica"><span class="hljs-keyword">String</span> strToMatch = <span class="hljs-string">"aabbccaaaddd"</span>;
+<span class="hljs-keyword">String</span> regex = <span class="hljs-string">"aaa"</span>;
+<span class="hljs-keyword">Pattern</span> p = <span class="hljs-keyword">Pattern</span>.compile(regex);
+Matcher m = p.matcher(strToMatch);
+if (m.matches()) <span class="hljs-list">{
+    String result = m.group(0);
+}</span></code></pre>
+
+
+
+<h4 id="pattern-常用api">Pattern 常用API</h4>
+
+<dl>
+<dt><code>static Pattern compile(String regex)</code></dt>
+<dt><code>static Pattern compile(String regex, int flags)</code></dt>
+<dd>获得由指定正则表达式生成的pattern对象.</dd>
+
+<dt><code>Matcher matcher(CharSequence input)</code></dt>
+<dd>获得一个包含input的Matcher对象.</dd>
+
+<dt><code>static matches(String regex, CharSequence input)</code></dt>
+<dd>判断input是否包含匹配给定正则表达式的内容.</dd>
+</dl>
+
+
+
+<h4 id="matcher-常用api">Matcher 常用API</h4>
+
+<dl>
+<dt><code>int end()</code></dt>
+<dd>获得最后一次匹配的位置</dd>
+
+<dt><code>boolean find()</code></dt>
+<dt><code>boolean find(int start)</code></dt>
+<dd>进行下一次匹配并判断是否存在.</dd>
+
+<dt><code>String group()</code></dt>
+<dd>获得前一次匹配到的内容.</dd>
+
+<dt><code>String group(int group)</code></dt>
+<dd>获取前一次匹配时得到的指定group的内容.</dd>
+
+<dt><code>int groupCount()</code></dt>
+<dd>获得匹配到的组数.</dd>
+
+<dt><code>boolean hitEnd()</code></dt>
+<dd>判断最后一次匹配是否到达字符串结尾.</dd>
+
+<dt><code>boolean matches()</code></dt>
+<dd>进行匹配并判断是否成功.</dd>
+
+<dt><code>int start()</code></dt>
+<dd>获得前一次匹配的起始偏移量.</dd>
+</dl>
+
 <hr>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p><code>static &lt;T&gt; List&lt;T&gt; asList(T... a)</code><br>: 将一个数组转换成对应类型的List对象</p>
-<p><code>static int binarySearch(T[] a, T key)</code><br>: 使用二分法查找算法查找数组内的某个元素，返回其对应的index；如果没有找到，则返回-1。使用二分法查找之前需要保证数组已经升序排列。其中T类型包括<code>byte</code>、<code>char</code>、<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code>、<code>Object</code>、<code>short</code>。</p>
-<p><code>static int binarySearch(T[] a, int fromIndex, int toIndex, T key)</code><br>: 同上。只是规定了查找范围在<code>fromIndex</code>到<code>toIndex</code>之间。</p>
-<p><code>static &lt;T&gt; int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator&lt;? super T&gt; c)</code><br>: 同上。只是要提供一个T类型的<code>Comparator</code> 对象。T为泛型参数。规定了查找范围在<code>fromIndex</code>到<code>toIndex</code>之间。</p>
-<p><code>static binarySearch(T[] a, T key, Comparator&lt;? super T&gt; c)</code><br>: 同上。没有规定查找范围。</p>
-<p><code>static T[] copyOf(T[] original, int newLength)</code><br>: 对原始数组进行复制，不够长度的部分补充<code>T</code> 类型的初始值。<code>T</code> 类型包括基本类型和泛型。</p>
-<p><code>static T[] copyOfRange(T[] original, int from, int to)</code><br>: 对原始数组进行复制，复制的范围是<code>from</code> 到 <code>to</code>。<code>T</code> 类型包括基本类型和泛型。</p>
-<p><code>static boolean equals(T[] a, T[] b)</code><br>: 判断两个数组是否相等，同时比较长度和内容。</p>
-<p><code>static void fill(T[] a, T val)</code><br>: 将<code>val</code> 填充到数组的每一个位置。</p>
-<p><code>static void fill(T[] a, int fromIndex, int toIndex, T val)</code><br>: 将<code>val</code> 填充到数组从<code>fromIndex</code> 到<code>toIndex</code>的每一个位置。</p>
-<p><code>static void parallelSort(T[] a)</code><br>: 对数组进行归并排序或者Tim排序，排序后为升序。<strong>jdk 1.8</strong></p>
-<p><code>static void parallelSort(T[] a, int fromIndex, int toIndex)</code><br>: 对数组范围在<code>fromIndex</code>到<code>toIndex</code>之间的元素进行归并排序或者Tim排序。<strong>jdk 1.8</strong></p>
-<p><code>static void parallelSort(T[] a, Comparator&lt;? super T&gt; cmp)</code><br>: 对数组进行归并排序或者Tim排序。数组排序的顺序由<code>Comparator</code> 对象规定。<strong>jdk 1.8</strong></p>
-<p><code>static void parallelSort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; cmp)</code><br>: 对数组范围在<code>fromIndex</code>到<code>toIndex</code>之间的元素进行归并排序或者Tim排序。数组排序的顺序由<code>Comparator</code> 对象规定。<strong>jdk 1.8</strong></p>
-<p><code>static void sort(T[] a)</code><br>: 对数组进行升序排序，排序算法为快速排序。如果<code>T</code> 为<code>Object</code> 类型时，需要其实现<code>Comparable</code> 接口。</p>
-<p><code>static void sort(T[] a, int fromIndex, int toIndex)</code><br>: 同上，指定范围从<code>fromIndex</code> 到<code>toIndex</code> 之间。</p>
-<p><code>static void sort(T[] a, Comparator&lt;? super T&gt; c)</code><br>: 同上，排序的顺序由<code>Comparator</code> 规定。</p>
-<p><code>static void sort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</code><br>: 同上，指定范围从<code>fromIndex</code> 到<code>toIndex</code> 之间。</p>
-<p><code>static String toString(T[] a)</code><br>: 将数组转换为字符串对象，转换之后形如<code>[x,y,z]</code></p>
+
+
+
+<h2 id="array">Array</h2>
+
+<dl>
+<dt><code>static &lt;T&gt; List&lt;T&gt; asList(T... a)</code></dt>
+<dd>将一个数组转换成对应类型的List对象</dd>
+
+<dt><code>static int binarySearch(T[] a, T key)</code></dt>
+<dd>使用二分法查找算法查找数组内的某个元素，返回其对应的index；如果没有找到，则返回-1。使用二分法查找之前需要保证数组已经升序排列。其中T类型包括<code>byte</code>、<code>char</code>、<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code>、<code>Object</code>、<code>short</code>。</dd>
+
+<dt><code>static int binarySearch(T[] a, int fromIndex, int toIndex, T key)</code></dt>
+<dd>同上。只是规定了查找范围在<code>fromIndex</code>到<code>toIndex</code>之间。</dd>
+
+<dt><code>static &lt;T&gt; int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator&lt;? super T&gt; c)</code></dt>
+<dd>同上。只是要提供一个T类型的<code>Comparator</code> 对象。T为泛型参数。规定了查找范围在<code>fromIndex</code>到<code>toIndex</code>之间。</dd>
+
+<dt><code>static binarySearch(T[] a, T key, Comparator&lt;? super T&gt; c)</code></dt>
+<dd>同上。没有规定查找范围。</dd>
+
+<dt><code>static T[] copyOf(T[] original, int newLength)</code></dt>
+<dd>对原始数组进行复制，不够长度的部分补充<code>T</code> 类型的初始值。<code>T</code> 类型包括基本类型和泛型。</dd>
+
+<dt><code>static T[] copyOfRange(T[] original, int from, int to)</code></dt>
+<dd>对原始数组进行复制，复制的范围是<code>from</code> 到 <code>to</code>。<code>T</code> 类型包括基本类型和泛型。</dd>
+
+<dt><code>static boolean equals(T[] a, T[] b)</code></dt>
+<dd>判断两个数组是否相等，同时比较长度和内容。</dd>
+
+<dt><code>static void fill(T[] a, T val)</code></dt>
+<dd>将<code>val</code> 填充到数组的每一个位置。</dd>
+
+<dt><code>static void fill(T[] a, int fromIndex, int toIndex, T val)</code></dt>
+<dd>将<code>val</code> 填充到数组从<code>fromIndex</code> 到<code>toIndex</code>的每一个位置。</dd>
+
+<dt><code>static void parallelSort(T[] a)</code></dt>
+<dd>对数组进行归并排序或者Tim排序，排序后为升序。<strong>jdk 1.8</strong></dd>
+
+<dt><code>static void parallelSort(T[] a, int fromIndex, int toIndex)</code></dt>
+<dd>对数组范围在<code>fromIndex</code>到<code>toIndex</code>之间的元素进行归并排序或者Tim排序。<strong>jdk 1.8</strong></dd>
+
+<dt><code>static void parallelSort(T[] a, Comparator&lt;? super T&gt; cmp)</code></dt>
+<dd>对数组进行归并排序或者Tim排序。数组排序的顺序由<code>Comparator</code> 对象规定。<strong>jdk 1.8</strong></dd>
+
+<dt><code>static void parallelSort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; cmp)</code></dt>
+<dd>对数组范围在<code>fromIndex</code>到<code>toIndex</code>之间的元素进行归并排序或者Tim排序。数组排序的顺序由<code>Comparator</code> 对象规定。<strong>jdk 1.8</strong></dd>
+
+<dt><code>static void sort(T[] a)</code></dt>
+<dd>对数组进行升序排序，排序算法为快速排序。如果<code>T</code> 为<code>Object</code> 类型时，需要其实现<code>Comparable</code> 接口。</dd>
+
+<dt><code>static void sort(T[] a, int fromIndex, int toIndex)</code></dt>
+<dd>同上，指定范围从<code>fromIndex</code> 到<code>toIndex</code> 之间。</dd>
+
+<dt><code>static void sort(T[] a, Comparator&lt;? super T&gt; c)</code></dt>
+<dd>同上，排序的顺序由<code>Comparator</code> 规定。</dd>
+
+<dt><code>static void sort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</code></dt>
+<dd>同上，指定范围从<code>fromIndex</code> 到<code>toIndex</code> 之间。</dd>
+
+<dt><code>static String toString(T[] a)</code></dt>
+<dd>将数组转换为字符串对象，转换之后形如<code>[x,y,z]</code></dd>
+</dl>
+
 <hr>
-<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>常用的List包括<code>ArrayList</code> 、<code>LinkedList</code> 和<code>Stack</code>。</p>
-<h4 id="ArrayLIst-常用API"><a href="#ArrayLIst-常用API" class="headerlink" title="ArrayLIst 常用API"></a>ArrayLIst 常用API</h4><p><code>boolean add(E e)</code><br>: 向ArrayList尾部添加一个元素。</p>
-<p><code>void add(int index, E e)</code><br>: 向ArrayList的指定index处添加一个元素。</p>
-<p><code>boolean addAll(Collection&lt;? extends E&gt; c)</code><br>: 向ArrayList尾部添加所有<code>c</code> 中的元素。</p>
-<p><code>boolean addAll(int index, Collection&lt;? extends E&gt; c)</code><br>: 向ArrayList的指定index处添加所有<code>c</code> 中的元素。</p>
-<p><code>void clear()</code><br>: 清空ArrayList。</p>
-<p><code>boolean contains(Object o)</code><br>: 判断ArrayList中是否包含指定对象。</p>
-<p><code>E get(int index)</code><br>: 从ArrayList中获取指定index处的元素。</p>
-<p><code>int indexOf(Object o)</code><br>: 获得指定对象在ArrayList中的位置，如果不存在则返回-1。</p>
-<p><code>boolean isEmpty()</code><br>: 判断ArrayList的长度是否为0。</p>
-<p><code>Iterator&lt;E&gt; iterator()</code><br>: 获得一个迭代器。</p>
-<p><code>int lastIndexOf(Object o)</code><br>: 获得指定对象在ArrayList中的最后一次出现的位置，如果不存在则返回-1。</p>
-<p><code>E remove(int index)</code><br>: 将指定index处的元素从ArrayList中移除。</p>
-<p><code>E remove(Object o)</code><br>: 将指定对象从ArrayList中移除。</p>
-<p><code>boolean removeAll(Collection&lt;?&gt; c)</code><br>: 将指定<code>c</code> 中所有元素从ArrayList中删除。</p>
-<p><code>void replaceAll(Collection&lt;?&gt; c)</code><br>: 用指定<code>c</code> 中所有元素替换ArrayList。不存在<code>c</code> 中的则删除。</p>
-<p><code>E set(int index, E element)</code><br>: 更新指定位置处的元素。</p>
-<p><code>int size()</code><br>: 获得ArrayList的元素个数。</p>
-<p><code>void sort(Comparator&lt;? super E&gt; c)</code><br>: 按照指定的<code>Comparator</code> 对ArrayList进行排序。</p>
-<p><code>List&lt;E&gt; subList(int fromIndex, int toIndex)</code><br>: 获得一个从<code>fromIndex</code> 到<code>toIndex</code> 的子List，左闭右开。</p>
-<p><code>Object[] toArray()</code><br>: 将ArrayList转换成数组。</p>
-<p><code>&lt;T&gt; T[] toArray(T[] a)</code><br>: 将ArrayList转换成数组。<code>a</code> 不需要指定大小。</p>
-<p><code>void trimToSize()</code><br>: 将ArrayList的容量缩减至适应当前元素个数。</p>
-<h4 id="LinkedList-常用API"><a href="#LinkedList-常用API" class="headerlink" title="LinkedList 常用API"></a>LinkedList 常用API</h4><p>LinkedList是List的一种双链表实现。同时它也是Deque的一种实现。这里仅列出与ArrayList和 Deque不同的API。</p>
-<p><code>set(int index, E element)</code><br>: 将元素添加到List的指定位置处。</p>
-<h4 id="Stack-常用API"><a href="#Stack-常用API" class="headerlink" title="Stack 常用API"></a>Stack 常用API</h4><p><code>boolean empty()</code><br>: 判断堆栈是否为空</p>
-<p><code>E peek()</code><br>: 从栈顶取一个元素，但是不删除它。</p>
-<p><code>E pop()</code><br>: 从栈顶取出一个元素，并删除它。</p>
-<p><code>E push(E item)</code><br>: 将一个元素压入栈顶。</p>
-<p><code>int search(Object o)</code><br>: 查找一个元素，返回它与栈顶的距离，栈顶元素为1。 如果没有找到，则返回-1。</p>
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>常用的Set有两种，分别为HashSet和TreeSet。</p>
-<h4 id="HashSet-常用API"><a href="#HashSet-常用API" class="headerlink" title="HashSet 常用API"></a>HashSet 常用API</h4><p><code>boolean add(E e)</code><br>: 如果指定元素不存在，便将其添加到set中。</p>
-<p><code>void clear()</code><br>: 清空set中所有元素。</p>
-<p><code>Object clone()</code><br>: 对set进行浅克隆。只克隆set对象，不克隆其中的元素。</p>
-<p><code>boolean contains(Object o)</code><br>: 判断set中是否包含指定对象。</p>
-<p><code>boolean isEmpty()</code><br>: 判断set是否为空。</p>
-<p><code>Iterator&lt;E&gt; iterator()</code><br>: 获得一个迭代器。</p>
-<p><code>boolean remove(Object o)</code><br>: 从set中删除指定元素。</p>
-<p><code>int size()</code><br>: 获得set的元素个数。</p>
-<h4 id="TreeSet-常用API"><a href="#TreeSet-常用API" class="headerlink" title="TreeSet 常用API"></a>TreeSet 常用API</h4><p>TreeSet是排序了的set。可以在其构造器中制定一个<code>Comparator</code>对象，用来排序。<br>此处仅列出与HashSet不同的API。</p>
-<p><code>E ceiling(E e)</code><br>: 获得大于等于指定元素的最小一个元素，无则返回<code>null</code>。</p>
-<p><code>Iterator&lt;E&gt; descendingIterator()</code><br>: 获得一个逆序的迭代器。</p>
-<p><code>NavigableSet&lt;E&gt; descendingSet()</code><br>: 获得获得一个逆序的set。</p>
-<p><code>E first()</code><br>: 获得最小的元素。</p>
-<p><code>E floor(E e)</code><br>: 获得小于等于指定元素的最大一个元素。如果没有则返回<code>null</code>。</p>
-<p><code>SortedSet&lt;E&gt; headSet(E toElement)</code><br>: 获得小于指定元素的一个子set。</p>
-<p><code>NavigableSet&lt;E&gt; headSet(E toElement, boolean inclusive)</code><br>: <code>inclusive</code>为<code>true</code> 时，获得一个小于等于指定元素的子set，否则同上。</p>
-<p><code>E higher(E e)</code><br>: 获得大于指定元素的最小一个元素。如果没有则返回<code>null</code>。</p>
-<p><code>E last()</code><br>: 获得最大的元素。</p>
-<p><code>E lower(E e)</code><br>: 获得小于指定元素的最大一个元素。如果没有则返回<code>null</code>。</p>
-<p><code>E pollFirst()</code><br>: 获取最小元素，并从set中删除它。set为空时返回<code>null</code>。</p>
-<p><code>E pollLast()</code><br>: 获取最大元素，并从set中删除它。set为空时返回<code>null</code>。</p>
-<p><code>NavigableSet&lt;E&gt; subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)</code><br>: 获得从<code>fromElement</code> 到<code>toElement</code> 区间的一个子set。<code>fromInclusive</code> 和<code>toInclusive</code> 控制区间开闭。</p>
-<p><code>SortedSet&lt;E&gt; subSet(E fromElement, E toElement)</code><br>: 获得从<code>fromElement</code> 到<code>toElement</code> 区间的一个子set。左闭右开。</p>
-<p><code>SortedSet&lt;E&gt; tailSet(E fromElement)</code><br>: 获得大于指定元素的一个子set。</p>
-<p><code>NavigableSet&lt;E&gt; tailSet(E fromElement, boolean inclusive)</code><br>: <code>inclusive</code>为<code>true</code> 时，获得大于等于指定元素的一个子set，否则同上。</p>
-<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center">抛出异常</th>
-<th>返回值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">插入</td>
-<td style="text-align:center">add(e)</td>
-<td>offer(e)</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">删除</td>
-<td style="text-align:center">remove()</td>
-<td>poll()</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">测试</td>
-<td style="text-align:center">element()</td>
-<td>peek()</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><code>boolean add(E e)</code><br>: 向队列尾部添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
-<p><code>E element()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>boolean offer(E e)</code><br>: 向队列尾部添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</p>
-<p><code>E peek()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E poll()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E remove()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<h3 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h3><p>Deque 是双向队列，缩写自Double Ended Queue。它的常见实现包括ArrayDeque 和 LinkedList。</p>
+
+
+
+<h2 id="collection">Collection</h2>
+
+
+
+<h3 id="list">List</h3>
+
+<p>常用的List包括<code>ArrayList</code> 、<code>LinkedList</code> 和<code>Stack</code>。</p>
+
+
+
+<h4 id="arraylist-常用api">ArrayLIst 常用API</h4>
+
+<dl>
+<dt><code>boolean add(E e)</code></dt>
+<dd>向ArrayList尾部添加一个元素。</dd>
+
+<dt><code>void add(int index, E e)</code></dt>
+<dd>向ArrayList的指定index处添加一个元素。</dd>
+
+<dt><code>boolean addAll(Collection&lt;? extends E&gt; c)</code></dt>
+<dd>向ArrayList尾部添加所有<code>c</code> 中的元素。</dd>
+
+<dt><code>boolean addAll(int index, Collection&lt;? extends E&gt; c)</code></dt>
+<dd>向ArrayList的指定index处添加所有<code>c</code> 中的元素。</dd>
+
+<dt><code>void clear()</code></dt>
+<dd>清空ArrayList。</dd>
+
+<dt><code>boolean contains(Object o)</code></dt>
+<dd>判断ArrayList中是否包含指定对象。</dd>
+
+<dt><code>E get(int index)</code></dt>
+<dd>从ArrayList中获取指定index处的元素。</dd>
+
+<dt><code>int indexOf(Object o)</code></dt>
+<dd>获得指定对象在ArrayList中的位置，如果不存在则返回-1。</dd>
+
+<dt><code>boolean isEmpty()</code></dt>
+<dd>判断ArrayList的长度是否为0。</dd>
+
+<dt><code>Iterator&lt;E&gt; iterator()</code></dt>
+<dd>获得一个迭代器。</dd>
+
+<dt><code>int lastIndexOf(Object o)</code></dt>
+<dd>获得指定对象在ArrayList中的最后一次出现的位置，如果不存在则返回-1。</dd>
+
+<dt><code>E remove(int index)</code></dt>
+<dd>将指定index处的元素从ArrayList中移除。</dd>
+
+<dt><code>E remove(Object o)</code></dt>
+<dd>将指定对象从ArrayList中移除。</dd>
+
+<dt><code>boolean removeAll(Collection&lt;?&gt; c)</code></dt>
+<dd>将指定<code>c</code> 中所有元素从ArrayList中删除。</dd>
+
+<dt><code>void replaceAll(Collection&lt;?&gt; c)</code></dt>
+<dd>用指定<code>c</code> 中所有元素替换ArrayList。不存在<code>c</code> 中的则删除。</dd>
+
+<dt><code>E set(int index, E element)</code></dt>
+<dd>更新指定位置处的元素。</dd>
+
+<dt><code>int size()</code></dt>
+<dd>获得ArrayList的元素个数。</dd>
+
+<dt><code>void sort(Comparator&lt;? super E&gt; c)</code></dt>
+<dd>按照指定的<code>Comparator</code> 对ArrayList进行排序。</dd>
+
+<dt><code>List&lt;E&gt; subList(int fromIndex, int toIndex)</code></dt>
+<dd>获得一个从<code>fromIndex</code> 到<code>toIndex</code> 的子List，左闭右开。</dd>
+
+<dt><code>Object[] toArray()</code></dt>
+<dd>将ArrayList转换成数组。</dd>
+
+<dt><code>&lt;T&gt; T[] toArray(T[] a)</code></dt>
+<dd>将ArrayList转换成数组。<code>a</code> 不需要指定大小。</dd>
+
+<dt><code>void trimToSize()</code></dt>
+<dd>将ArrayList的容量缩减至适应当前元素个数。</dd>
+</dl>
+
+
+
+<h4 id="linkedlist-常用api">LinkedList 常用API</h4>
+
+<p>LinkedList是List的一种双链表实现。同时它也是Deque的一种实现。这里仅列出与ArrayList和 Deque不同的API。</p>
+
+<dl>
+<dt><code>set(int index, E element)</code></dt>
+<dd>将元素添加到List的指定位置处。</dd>
+</dl>
+
+
+
+<h4 id="stack-常用api">Stack 常用API</h4>
+
+<dl>
+<dt><code>boolean empty()</code></dt>
+<dd>判断堆栈是否为空</dd>
+
+<dt><code>E peek()</code></dt>
+<dd>从栈顶取一个元素，但是不删除它。</dd>
+
+<dt><code>E pop()</code></dt>
+<dd>从栈顶取出一个元素，并删除它。</dd>
+
+<dt><code>E push(E item)</code></dt>
+<dd>将一个元素压入栈顶。</dd>
+
+<dt><code>int search(Object o)</code></dt>
+<dd>查找一个元素，返回它与栈顶的距离，栈顶元素为1。 如果没有找到，则返回-1。</dd>
+</dl>
+
+
+
+<h3 id="set">Set</h3>
+
+<p>常用的Set有两种，分别为HashSet和TreeSet。</p>
+
+
+
+<h4 id="hashset-常用api">HashSet 常用API</h4>
+
+<dl>
+<dt><code>boolean add(E e)</code></dt>
+<dd>如果指定元素不存在，便将其添加到set中。</dd>
+
+<dt><code>void clear()</code></dt>
+<dd>清空set中所有元素。</dd>
+
+<dt><code>Object clone()</code></dt>
+<dd>对set进行浅克隆。只克隆set对象，不克隆其中的元素。</dd>
+
+<dt><code>boolean contains(Object o)</code></dt>
+<dd>判断set中是否包含指定对象。</dd>
+
+<dt><code>boolean isEmpty()</code></dt>
+<dd>判断set是否为空。</dd>
+
+<dt><code>Iterator&lt;E&gt; iterator()</code></dt>
+<dd>获得一个迭代器。</dd>
+
+<dt><code>boolean remove(Object o)</code></dt>
+<dd>从set中删除指定元素。</dd>
+
+<dt><code>int size()</code></dt>
+<dd>获得set的元素个数。</dd>
+</dl>
+
+
+
+<h4 id="treeset-常用api">TreeSet 常用API</h4>
+
+<p>TreeSet是排序了的set。可以在其构造器中制定一个<code>Comparator</code>对象，用来排序。 <br>
+此处仅列出与HashSet不同的API。</p>
+
+<dl>
+<dt><code>E ceiling(E e)</code></dt>
+<dd>获得大于等于指定元素的最小一个元素，无则返回<code>null</code>。</dd>
+
+<dt><code>Iterator&lt;E&gt; descendingIterator()</code></dt>
+<dd>获得一个逆序的迭代器。</dd>
+
+<dt><code>NavigableSet&lt;E&gt; descendingSet()</code></dt>
+<dd>获得获得一个逆序的set。</dd>
+
+<dt><code>E first()</code></dt>
+<dd>获得最小的元素。</dd>
+
+<dt><code>E floor(E e)</code></dt>
+<dd>获得小于等于指定元素的最大一个元素。如果没有则返回<code>null</code>。</dd>
+
+<dt><code>SortedSet&lt;E&gt; headSet(E toElement)</code></dt>
+<dd>获得小于指定元素的一个子set。</dd>
+
+<dt><code>NavigableSet&lt;E&gt; headSet(E toElement, boolean inclusive)</code></dt>
+<dd><code>inclusive</code>为<code>true</code> 时，获得一个小于等于指定元素的子set，否则同上。</dd>
+
+<dt><code>E higher(E e)</code></dt>
+<dd>获得大于指定元素的最小一个元素。如果没有则返回<code>null</code>。</dd>
+
+<dt><code>E last()</code></dt>
+<dd>获得最大的元素。</dd>
+
+<dt><code>E lower(E e)</code></dt>
+<dd>获得小于指定元素的最大一个元素。如果没有则返回<code>null</code>。</dd>
+
+<dt><code>E pollFirst()</code></dt>
+<dd>获取最小元素，并从set中删除它。set为空时返回<code>null</code>。</dd>
+
+<dt><code>E pollLast()</code></dt>
+<dd>获取最大元素，并从set中删除它。set为空时返回<code>null</code>。</dd>
+
+<dt><code>NavigableSet&lt;E&gt; subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)</code></dt>
+<dd>获得从<code>fromElement</code> 到<code>toElement</code> 区间的一个子set。<code>fromInclusive</code> 和<code>toInclusive</code> 控制区间开闭。</dd>
+
+<dt><code>SortedSet&lt;E&gt; subSet(E fromElement, E toElement)</code></dt>
+<dd>获得从<code>fromElement</code> 到<code>toElement</code> 区间的一个子set。左闭右开。</dd>
+
+<dt><code>SortedSet&lt;E&gt; tailSet(E fromElement)</code></dt>
+<dd>获得大于指定元素的一个子set。</dd>
+
+<dt><code>NavigableSet&lt;E&gt; tailSet(E fromElement, boolean inclusive)</code></dt>
+<dd><code>inclusive</code>为<code>true</code> 时，获得大于等于指定元素的一个子set，否则同上。</dd>
+</dl>
+
+
+
+<h3 id="queue">Queue</h3>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">—</th>
-<th style="text-align:left">抛出异常</th>
-<th style="text-align:left">返回值</th>
-<th style="text-align:left">抛出异常</th>
-<th style="text-align:left">返回值</th>
+  <th align="center"></th>
+  <th align="center">抛出异常</th>
+  <th align="center">返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">插入</td>
-<td style="text-align:left">addFirst(e)</td>
-<td style="text-align:left">offerFirst(e)</td>
-<td style="text-align:left">addLast(e)</td>
-<td style="text-align:left">offerLast(e)</td>
+<tbody><tr>
+  <td align="center">插入</td>
+  <td align="center">add(e)</td>
+  <td align="center">offer(e)</td>
 </tr>
 <tr>
-<td style="text-align:left">删除</td>
-<td style="text-align:left">removeFirst()</td>
-<td style="text-align:left">pollFirst()</td>
-<td style="text-align:left">removeLast()</td>
-<td style="text-align:left">pollLast()</td>
+  <td align="center">删除</td>
+  <td align="center">remove()</td>
+  <td align="center">poll()</td>
 </tr>
 <tr>
-<td style="text-align:left">测试</td>
-<td style="text-align:left">getFirst()</td>
-<td style="text-align:left">peekFirst()</td>
-<td style="text-align:left">getLast()</td>
-<td style="text-align:left">peekLast()</td>
+  <td align="center">测试</td>
+  <td align="center">element()</td>
+  <td align="center">peek()</td>
 </tr>
-</tbody>
-</table>
-<p><code>boolean add(E e)</code><br>: 向队列尾添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
-<p><code>void addFirst(E e)</code><br>: 向队列头添加一个元素。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
-<p><code>void addLast(E e)</code><br>: 向队列尾添加一个元素。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
-<p><code>boolean contains(Object o)</code><br>: 判断队列中是否包含指定的对象。</p>
-<p><code>Iterator&lt;E&gt; descendingIterator()</code><br>: 返回一个逆序的迭代器。</p>
-<p><code>E element()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>E getFirst()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>E getLast()</code><br>: 从队列尾取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>Iterator&lt;E&gt; iterator()</code><br>: 按队列的顺序返回一个的迭代器。</p>
-<p><code>boolean offer(E e)</code><br>: 向队列尾添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</p>
-<p><code>boolean offerFirst(E e)</code><br>: 向队列头添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</p>
-<p><code>boolean offerLast(E e)</code><br>: 向队列尾添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</p>
-<p><code>E peek()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E peekFirst()</code><br>: 从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E peekLast()</code><br>: 从队列尾取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E poll()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E pollFirst()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E pollLast()</code><br>: 从队列尾取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</p>
-<p><code>E pop()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>void push(E e)</code><br>: 将一个元素压入队列头部。如果队列已满，则抛出<code>IllegalStateException</code>。</p>
-<p><code>E remove()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>boolean remove(Object o)</code><br>: 从队列中查找指定的对象，并在第一次出现的地方删除它。成功时，返回<code>true</code>。</p>
-<p><code>E removeFirst()</code><br>: 从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>boolean removeFirstOccurrence(Object o)</code><br>: 从队列中查找指定的对象，并在第一次出现的地方删除它。成功时，返回<code>true</code>。</p>
-<p><code>E removeLast()</code><br>:  从队列尾取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</p>
-<p><code>boolean removeLastOccurrence(Object o)</code><br>: 从队列中查找指定的对象，并在最后一次出现的地方删除它。成功时，返回<code>true</code>。</p>
-<p><code>int size()</code><br>: 获得队列中元素的个数。</p>
+</tbody></table>
+
+
+<dl>
+<dt><code>boolean add(E e)</code></dt>
+<dd>向队列尾部添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</dd>
+
+<dt><code>E element()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>boolean offer(E e)</code></dt>
+<dd>向队列尾部添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</dd>
+
+<dt><code>E peek()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E poll()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E remove()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+</dl>
+
+
+
+<h3 id="deque">Deque</h3>
+
+<p>Deque 是双向队列，缩写自Double Ended Queue。它的常见实现包括ArrayDeque 和 LinkedList。</p>
+
+<dl>
+<dt><table>
+<thead>
+<tr>
+  <th align="left"></th>
+  <th align="left">抛出异常</th>
+  <th align="left">返回值</th>
+  <th align="left">抛出异常</th>
+  <th align="left">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="left">插入</td>
+  <td align="left">addFirst(e)</td>
+  <td align="left">offerFirst(e)</td>
+  <td align="left">addLast(e)</td>
+  <td align="left">offerLast(e)</td>
+</tr>
+<tr>
+  <td align="left">删除</td>
+  <td align="left">removeFirst()</td>
+  <td align="left">pollFirst()</td>
+  <td align="left">removeLast()</td>
+  <td align="left">pollLast()</td>
+</tr>
+<tr>
+  <td align="left">测试</td>
+  <td align="left">getFirst()</td>
+  <td align="left">peekFirst()</td>
+  <td align="left">getLast()</td>
+  <td align="left">peekLast()</td>
+</tr>
+</tbody></table>
+</dt>
+<dt><code>boolean add(E e)</code></dt>
+<dd>向队列尾添加一个元素，成功则返回true。如果队列已满，则抛出<code>IllegalStateException</code>。</dd>
+
+<dt><code>void addFirst(E e)</code></dt>
+<dd>向队列头添加一个元素。如果队列已满，则抛出<code>IllegalStateException</code>。</dd>
+
+<dt><code>void addLast(E e)</code></dt>
+<dd>向队列尾添加一个元素。如果队列已满，则抛出<code>IllegalStateException</code>。</dd>
+
+<dt><code>boolean contains(Object o)</code></dt>
+<dd>判断队列中是否包含指定的对象。</dd>
+
+<dt><code>Iterator&lt;E&gt; descendingIterator()</code></dt>
+<dd>返回一个逆序的迭代器。</dd>
+
+<dt><code>E element()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>E getFirst()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>E getLast()</code></dt>
+<dd>从队列尾取一个元素，但是不删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>Iterator&lt;E&gt; iterator()</code></dt>
+<dd>按队列的顺序返回一个的迭代器。</dd>
+
+<dt><code>boolean offer(E e)</code></dt>
+<dd>向队列尾添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</dd>
+
+<dt><code>boolean offerFirst(E e)</code></dt>
+<dd>向队列头添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</dd>
+
+<dt><code>boolean offerLast(E e)</code></dt>
+<dd>向队列尾添加一个元素，成功则返回<code>true</code>，否则返回<code>false</code>。</dd>
+
+<dt><code>E peek()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E peekFirst()</code></dt>
+<dd>从队列头取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E peekLast()</code></dt>
+<dd>从队列尾取一个元素，但是不删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E poll()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E pollFirst()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E pollLast()</code></dt>
+<dd>从队列尾取一个元素，并在队列中删除它。队列已为空时，返回<code>null</code>。</dd>
+
+<dt><code>E pop()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>void push(E e)</code></dt>
+<dd>将一个元素压入队列头部。如果队列已满，则抛出<code>IllegalStateException</code>。</dd>
+
+<dt><code>E remove()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>boolean remove(Object o)</code></dt>
+<dd>从队列中查找指定的对象，并在第一次出现的地方删除它。成功时，返回<code>true</code>。</dd>
+
+<dt><code>E removeFirst()</code></dt>
+<dd>从队列头取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>boolean removeFirstOccurrence(Object o)</code></dt>
+<dd>从队列中查找指定的对象，并在第一次出现的地方删除它。成功时，返回<code>true</code>。</dd>
+
+<dt><code>E removeLast()</code></dt>
+<dd>从队列尾取一个元素，并在队列中删除它。队列已为空时，抛出<code>NoSuchElementException</code>。</dd>
+
+<dt><code>boolean removeLastOccurrence(Object o)</code></dt>
+<dd>从队列中查找指定的对象，并在最后一次出现的地方删除它。成功时，返回<code>true</code>。</dd>
+
+<dt><code>int size()</code></dt>
+<dd>获得队列中元素的个数。</dd>
+</dl>
+
 <hr>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>常用的两中Map的实现类分别是HashMap和TreeMap。</p>
-<h4 id="HashMap-常用API"><a href="#HashMap-常用API" class="headerlink" title="HashMap 常用API"></a>HashMap 常用API</h4><p><code>void clear()</code><br>: 清空所有内容。</p>
-<p><code>Object clone()</code><br>: 对map进行浅复制。</p>
-<p><code>boolean contains(Object key)</code><br>: 判断该map是否包含指定的key。</p>
-<p><code>boolean containsValue(Object value)</code><br>: 判断该map是否包含指定的value。</p>
-<p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code><br>: 获得一个关于所有在此map中的内容的一个set。</p>
-<p><code>V get(Object key)</code><br>: 获取指定key所关联的value对象。</p>
-<p><code>V getOrDefault(Object key, V defaultValue)</code><br>: 同上，如果不存在，则返回默认值。</p>
-<p><code>isEmpty()</code><br>: 判断当前map是否为空。</p>
-<p><code>Set&lt;K&gt; keySet()</code><br>: 获得包含此map中所有key的一个set。</p>
-<p><code>V put(K key, V value)</code><br>: 将一个value对象与key关联并存入此map。</p>
-<p><code>void putAll(Map&lt;? extends K, ? extends V&gt; m)</code><br>: 将指定map复制到此map中。</p>
-<p><code>V putIfAbsent(K key, V value)</code><br>: 如果指定的key没有关联任何对象，或者关联到<code>null</code>，则将一个value对象与此key关联并存入此map。</p>
-<p><code>V remove(Object key)</code><br>: 从该map中移除一个与指定key关联的对象。</p>
-<p><code>boolean remove(Object key, Object value)</code><br>: 如果指定的key与value是关联的，便从该map中移除。</p>
-<p><code>V replace(K key, V value)</code><br>: 如果指定的key关联了某个对象或者<code>null</code>，则用value替换之。</p>
-<p><code>boolean replace(K key, V oldValue, V newValue)</code><br>: 如果指定的key与value是关联的，则用newValue替换oldValue。</p>
-<p><code>int size()</code><br>: 获得该map已关联的key-value个数。</p>
-<p><code>Collection&lt;V&gt; values()</code><br>: 获得该map中所有的value对象。</p>
-<h4 id="TreeMap-常用API"><a href="#TreeMap-常用API" class="headerlink" title="TreeMap 常用API"></a>TreeMap 常用API</h4><p>TreeMap是基于红黑树实现的。所有元素默认按照升序排列，或者通过在构造器中指定一个Comparator来排序。此处仅列出与HashMap不同的API。</p>
-<p><code>Map.Entry&lt;K,V&gt; ceilingEntry(K key)</code><br>: 获得所有key大于等于指定的key的key-value。</p>
-<p><code>K ceilingKey(K key)</code><br>: 获得大于等于指定key的最小一个。</p>
-<p><code>NavigableSet&lt;K&gt; descendingKeySet()</code><br>: 获得一个逆序的key的set。</p>
-<p><code>NavigableMap&lt;K,V&gt; descendingMap()</code><br>: 获得一个逆序的map。</p>
-<p><code>Map.Entry&lt;K,V&gt; firstEntry()</code><br>: 获得该map的最小key的key-value。</p>
-<p><code>K firstKey()</code><br>: 获得该map的最小的key。</p>
-<p><code>Map.Entry&lt;K,V&gt; floorEntry(K key)</code><br>: 获得所有key小于等于指定的key的key-value。</p>
-<p><code>K floorKey(K key)</code><br>: 获得小于等于该key的最大一个。</p>
-<p><code>SortedMap&lt;K,V&gt; headMap(K toKey)</code><br>: 获得所有key小于指定tokey的key-value。</p>
-<p><code>NavigableMap&lt;K,V&gt; headMap(K toKey, boolean inclusive)</code><br>: 同上，如果inclusive为true，则包括等于toKey的key-value。</p>
-<p><code>Map.Entry&lt;K,V&gt; higherEntry(K key)</code><br>: 获得所有大于指定key的key-value。</p>
-<p><code>K higherKey(K key)</code><br>: 获得大于指定key的最小一个。</p>
-<p><code>Map.Entry&lt;K,V&gt; lastEntry()</code><br>: 获得该map的最大key的key-value。</p>
-<p><code>K lastKey()</code><br>: 获得该map的最大的key。</p>
-<p><code>Map.Entry&lt;K,V&gt; lowerEntry(K key)</code><br>: 获得所有小于指定key的key-value。</p>
-<p><code>K lowerKey(K key)</code><br>: 获得小于指定key的最大一个。</p>
-<p><code>NavigableMap&lt;K,V&gt; subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive)</code><br>: 获得从fromKey到toKey的所有key-value。fromInclusive和toInclusive控制区间开闭。</p>
-<p><code>SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey)</code><br>: 获得从fromKey到toKey的所有key-value，左闭右开。</p>
-<p><code>SortedMap&lt;K,V&gt; tailMap(K fromKey)</code><br>: 获得所有key小于指定tokey的key-value。</p>
-<p><code>SortedMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive)</code><br>: 同上，如果inclusive为true，则包括等于fromKey的key-value。</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/03/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        <aside id="sidebar">
-  <nav class="menus">
-  	<ul>
-  		<li><a href="/"><i class="icon icon-home"></i></a></li>
-  		
-			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
-  		
-  		
-			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
-  		
-  		
-  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
-  		
-  	</ul>
-  </nav>
-  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
-</aside>
-      </div>
-      <footer id="footer">
-  
-	<div id="footer-info" class="inner">
-	  &copy; 2017 Leo Wang 
-	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
-	</div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tag</a>
-  
-    <a href="https://github.com/" class="mobile-nav-link">Github</a>
-  
-</nav>
-    
-
-<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<h2 id="map">Map</h2>
+
+<p>常用的两中Map的实现类分别是HashMap和TreeMap。</p>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
-</html>
+<h4 id="hashmap-常用api">HashMap 常用API</h4>
+
+<dl>
+<dt><code>void clear()</code></dt>
+<dd>清空所有内容。</dd>
+
+<dt><code>Object clone()</code></dt>
+<dd>对map进行浅复制。</dd>
+
+<dt><code>boolean contains(Object key)</code></dt>
+<dd>判断该map是否包含指定的key。</dd>
+
+<dt><code>boolean containsValue(Object value)</code></dt>
+<dd>判断该map是否包含指定的value。</dd>
+
+<dt><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code></dt>
+<dd>获得一个关于所有在此map中的内容的一个set。</dd>
+
+<dt><code>V get(Object key)</code></dt>
+<dd>获取指定key所关联的value对象。</dd>
+
+<dt><code>V getOrDefault(Object key, V defaultValue)</code></dt>
+<dd>同上，如果不存在，则返回默认值。</dd>
+
+<dt><code>isEmpty()</code></dt>
+<dd>判断当前map是否为空。</dd>
+
+<dt><code>Set&lt;K&gt; keySet()</code></dt>
+<dd>获得包含此map中所有key的一个set。</dd>
+
+<dt><code>V put(K key, V value)</code></dt>
+<dd>将一个value对象与key关联并存入此map。</dd>
+
+<dt><code>void putAll(Map&lt;? extends K, ? extends V&gt; m)</code></dt>
+<dd>将指定map复制到此map中。</dd>
+
+<dt><code>V putIfAbsent(K key, V value)</code></dt>
+<dd>如果指定的key没有关联任何对象，或者关联到<code>null</code>，则将一个value对象与此key关联并存入此map。</dd>
+
+<dt><code>V remove(Object key)</code></dt>
+<dd>从该map中移除一个与指定key关联的对象。</dd>
+
+<dt><code>boolean remove(Object key, Object value)</code></dt>
+<dd>如果指定的key与value是关联的，便从该map中移除。</dd>
+
+<dt><code>V replace(K key, V value)</code></dt>
+<dd>如果指定的key关联了某个对象或者<code>null</code>，则用value替换之。</dd>
+
+<dt><code>boolean replace(K key, V oldValue, V newValue)</code></dt>
+<dd>如果指定的key与value是关联的，则用newValue替换oldValue。</dd>
+
+<dt><code>int size()</code></dt>
+<dd>获得该map已关联的key-value个数。</dd>
+
+<dt><code>Collection&lt;V&gt; values()</code></dt>
+<dd>获得该map中所有的value对象。</dd>
+</dl>
+
+
+
+<h4 id="treemap-常用api">TreeMap 常用API</h4>
+
+<p>TreeMap是基于红黑树实现的。所有元素默认按照升序排列，或者通过在构造器中指定一个Comparator来排序。此处仅列出与HashMap不同的API。</p>
+
+<dl>
+<dt><code>Map.Entry&lt;K,V&gt; ceilingEntry(K key)</code></dt>
+<dd>获得所有key大于等于指定的key的key-value。</dd>
+
+<dt><code>K ceilingKey(K key)</code></dt>
+<dd>获得大于等于指定key的最小一个。</dd>
+
+<dt><code>NavigableSet&lt;K&gt; descendingKeySet()</code></dt>
+<dd>获得一个逆序的key的set。</dd>
+
+<dt><code>NavigableMap&lt;K,V&gt; descendingMap()</code></dt>
+<dd>获得一个逆序的map。</dd>
+
+<dt><code>Map.Entry&lt;K,V&gt; firstEntry()</code></dt>
+<dd>获得该map的最小key的key-value。</dd>
+
+<dt><code>K firstKey()</code></dt>
+<dd>获得该map的最小的key。</dd>
+
+<dt><code>Map.Entry&lt;K,V&gt; floorEntry(K key)</code></dt>
+<dd>获得所有key小于等于指定的key的key-value。</dd>
+
+<dt><code>K floorKey(K key)</code></dt>
+<dd>获得小于等于该key的最大一个。</dd>
+
+<dt><code>SortedMap&lt;K,V&gt; headMap(K toKey)</code></dt>
+<dd>获得所有key小于指定tokey的key-value。</dd>
+
+<dt><code>NavigableMap&lt;K,V&gt; headMap(K toKey, boolean inclusive)</code></dt>
+<dd>同上，如果inclusive为true，则包括等于toKey的key-value。</dd>
+
+<dt><code>Map.Entry&lt;K,V&gt; higherEntry(K key)</code></dt>
+<dd>获得所有大于指定key的key-value。</dd>
+
+<dt><code>K higherKey(K key)</code></dt>
+<dd>获得大于指定key的最小一个。</dd>
+
+<dt><code>Map.Entry&lt;K,V&gt; lastEntry()</code></dt>
+<dd>获得该map的最大key的key-value。</dd>
+
+<dt><code>K lastKey()</code></dt>
+<dd>获得该map的最大的key。</dd>
+
+<dt><code>Map.Entry&lt;K,V&gt; lowerEntry(K key)</code></dt>
+<dd>获得所有小于指定key的key-value。</dd>
+
+<dt><code>K lowerKey(K key)</code></dt>
+<dd>获得小于指定key的最大一个。</dd>
+
+<dt><code>NavigableMap&lt;K,V&gt; subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive)</code></dt>
+<dd>获得从fromKey到toKey的所有key-value。fromInclusive和toInclusive控制区间开闭。</dd>
+
+<dt><code>SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey)</code></dt>
+<dd>获得从fromKey到toKey的所有key-value，左闭右开。</dd>
+
+<dt><code>SortedMap&lt;K,V&gt; tailMap(K fromKey)</code></dt>
+<dd>获得所有key小于指定tokey的key-value。</dd>
+
+<dt><code>SortedMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive)</code></dt>
+<dd>同上，如果inclusive为true，则包括等于fromKey的key-value。</dd>
+</dl>
