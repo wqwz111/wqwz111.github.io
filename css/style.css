@@ -124,7 +124,7 @@ body,
 }
 body {
   background: #fff;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px "Droid Sans", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .left,
@@ -380,7 +380,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Droid Serif", "Times New Roman", serif;
   font-size: 1em;
   background: #f7f7f7;
   margin: 20px 0;
@@ -393,7 +393,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -593,7 +593,7 @@ a.article-title:hover {
   width: 100%;
   background: none;
   box-sizing: border-box;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px "Droid Sans", Helvetica, Arial, sans-serif;
   padding: 0 15px;
   color: #555;
   outline: none;
@@ -803,7 +803,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Roboto Mono", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
   background: #fff;
@@ -866,7 +866,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Roboto Mono", Consolas, Monaco, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -889,7 +889,7 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #f7f7f7;
   color: #999;
-  font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 0.85em "Droid Sans", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
