@@ -125,7 +125,7 @@ body,
 }
 body {
   background: #fff;
-  font: 14px 'Open Sans', sans-serif;
+  font: 14px 'Open Sans', 'Microsoft YaHei', sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .left,
@@ -394,7 +394,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Microsoft YaHei', sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -594,7 +594,7 @@ a.article-title:hover {
   width: 100%;
   background: none;
   box-sizing: border-box;
-  font: 14px 'Open Sans', sans-serif;
+  font: 14px 'Open Sans', 'Microsoft YaHei', sans-serif;
   padding: 0 15px;
   color: #555;
   outline: none;
@@ -890,7 +890,7 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #f7f7f7;
   color: #999;
-  font: 0.85em 'Open Sans', sans-serif;
+  font: 0.85em 'Open Sans', 'Microsoft YaHei', sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
