@@ -244,7 +244,7 @@
 </blockquote>
 <p><code>static int binarySearch(T[] a, T key)</code></p>
 <blockquote>
-<p>使用二分法查找算法查找数组内的某个元素，返回其对应的index；如果没有找到，则返回-1。使用二分法查找之前需要保证数组已经升序排列。其中T类型包括<code>byte</code>、<code>char</code>、<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code>、<code>Object</code>、<code>short</code>。</p>
+<p>使用二分法查找算法查找数组内的某个元素，返回其对应的index；如果没有找到，则返回负数。使用二分法查找之前需要保证数组已经升序排列。其中T类型包括<code>byte</code>、<code>char</code>、<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code>、<code>Object</code>、<code>short</code>。</p>
 </blockquote>
 <p><code>static int binarySearch(T[] a, int fromIndex, int toIndex, T key)</code></p>
 <blockquote>
@@ -881,6 +881,82 @@
 <p><code>SortedMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive)</code></p>
 <blockquote>
 <p>同上，如果inclusive为true，则包括等于fromKey的key-value。</p>
+</blockquote>
+<h4 id="Collections-常用API"><a href="#Collections-常用API" class="headerlink" title="Collections 常用API"></a>Collections 常用API</h4><p><code>static &lt;T&gt; boolean addAll(Collection&lt;? super T&gt; c, T... elements</code></p>
+<blockquote>
+<p>将元素添加进指定的Collection中。</p>
+</blockquote>
+<p><code>static &lt;T&gt; int binarySearch(List&lt;? extends Comparable&lt;? super T&gt;&gt; list, T key)</code></p>
+<blockquote>
+<p>使用二分法查找指定的key所在位置, 如果不存在则返回负数。</p>
+</blockquote>
+<p><code>static &lt;T&gt; int binarySearch(List&lt;? extends T&gt; list, T key, Comparator&lt;? super T&gt; c)</code></p>
+<blockquote>
+<p>同上, 需指定一个实现了Comparator接口的对象。</p>
+</blockquote>
+<p><code>static &lt;T&gt; void copy(List&lt;? super T&gt; dest, List&lt;? extends T&gt; src)</code></p>
+<blockquote>
+<p>将一个list里面的元素复制到另外一个list的相同位置处。</p>
+</blockquote>
+<p><code>static boolean disjoint(Collection&lt;?&gt; c1, Collection&lt;?&gt; c2)</code></p>
+<blockquote>
+<p>判断两个Collection中是否包含相同元素, 如果全不相同,则返回true。</p>
+</blockquote>
+<p><code>static &lt;T&gt; void fill(List&lt;? super T&gt; list, T obj)</code></p>
+<blockquote>
+<p>使用指定的obj替换list中的所有元素。</p>
+</blockquote>
+<p><code>static int frequency(Collection&lt;?&gt; c, Object o)</code></p>
+<blockquote>
+<p>获取指定元素在Collection中出现的次数。</p>
+</blockquote>
+<p><code>static int indexOfSubList(List&lt;?&gt; source, List&lt;?&gt; target)</code></p>
+<blockquote>
+<p>获取target在source中的第一次出现的起始位置。</p>
+</blockquote>
+<p><code>static int lastIndexOfSubList(List&lt;?&gt; source, List&lt;?&gt; target)</code></p>
+<blockquote>
+<p>获取target在source中的最后一次出现的起始位置。</p>
+</blockquote>
+<p><code>static &lt;T extends Object &amp; Comparable&lt;? super T&gt;&gt; T max(Collection&lt;? extends T&gt; coll)</code></p>
+<blockquote>
+<p>获取指定Collection中的最大元素。</p>
+</blockquote>
+<p><code>static &lt;T&gt; T max(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)</code></p>
+<blockquote>
+<p>同上, 需提供一个实现了Comparator接口的对象。</p>
+</blockquote>
+<p><code>static &lt;T extends Object &amp; Comparable&lt;? super T&gt;&gt; T min(Collection&lt;? extends T&gt; coll)</code></p>
+<blockquote>
+<p>获取指定Collection中的最小元素。</p>
+</blockquote>
+<p><code>static &lt;T&gt; T min(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)</code></p>
+<blockquote>
+<p>同上, 需提供一个实现了Comparator接口的对象。</p>
+</blockquote>
+<p><code>static &lt;T&gt; boolean replaceAll(List&lt;T&gt; list, T oldVal, T newVal)</code></p>
+<blockquote>
+<p>将list中的所有oldVal替换为newVal。</p>
+</blockquote>
+<p><code>static void reverse(List&lt;?&gt; list)</code></p>
+<blockquote>
+<p>反转list。</p>
+</blockquote>
+<p><code>static void rotate(List&lt;?&gt; list, int distance)</code></p>
+<blockquote>
+<p>以distance为半径旋转list。</p>
+</blockquote>
+<p><code>static &lt;T extends Comparable&lt;? super T&gt;&gt; void sort(List&lt;T&gt; list)</code></p>
+<blockquote>
+<p>对list进行排序,默认为升序。</p>
+</blockquote>
+<p><code>static &lt;T&gt; void sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c)</code></p>
+<blockquote>
+<p>对list进行排序,排序依据为提供的Comparator对象。</p>
+</blockquote>
+<p><code>static void swap(List&lt;?&gt; list, int i, int j)</code></p>
+<blockquote>
+<p>将list中的i和j处两个元素互换位置。</p>
 </blockquote>
 
       
